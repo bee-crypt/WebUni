@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Food Construct</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/lunch-style.css">
+    <link rel="stylesheet" href="./styles/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="build-lunch.html" class="active">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#footer">Контакты</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="auth.html">Вход в систему</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Блок с вариантами ланчей -->
+        <section class="meal-variants-section">
+            <h2>Доступные варианты ланча</h2>
+            <p class="section-description">Выберите один из готовых вариантов или соберите свой</p>
+            
+            <div class="variants-grid">
+                <div class="variant-card">
+                    <div class="variant-dishes">
+                        <div class="variant-dish"><img src="images/soup2.jpeg" alt="Суп"><span>Суп</span></div>
+                        <div class="variant-dish"><img src="images/main1.jpeg" alt="Главное блюдо"><span>Главное блюдо</span></div>
+                        <div class="variant-dish"><img src="images/drink1.jpeg" alt="Напиток"><span>Напиток</span></div>
+                    </div>
+                    <h3>Классический</h3>
+                    <p>Суп + Главное блюдо + Напиток</p>
+                    <p class="dessert-info">Десерт можно добавить опционально</p>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-dishes">
+                        <div class="variant-dish"><img src="images/salad1.jpg" alt="Салат"><span>Салат</span></div>
+                        <div class="variant-dish"><img src="images/drink2.jpeg" alt="Напиток"><span>Напиток</span></div>
+                    </div>
+                    <h3>Лёгкий</h3>
+                    <p>Салат + Напиток</p>
+                    <p class="dessert-info">Десерт можно добавить опционально</p>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-dishes">
+                        <div class="variant-dish"><img src="images/soup3.jpeg" alt="Суп"><span>Суп</span></div>
+                        <div class="variant-dish"><img src="images/salad3.jpg" alt="Салат"><span>Салат</span></div>
+                        <div class="variant-dish"><img src="images/main2.jpeg" alt="Главное блюдо"><span>Главное блюдо</span></div>
+                        <div class="variant-dish"><img src="images/drink3.jpeg" alt="Напиток"><span>Напиток</span></div>
+                    </div>
+                    <h3>Полный</h3>
+                    <p>Суп + Салат + Главное блюдо + Напиток</p>
+                    <p class="dessert-info">Десерт можно добавить опционально</p>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-dishes">
+                        <div class="variant-dish"><img src="images/soup4.jpeg" alt="Суп"><span>Суп</span></div>
+                        <div class="variant-dish"><img src="images/main3.jpeg" alt="Главное блюдо"><span>Главное блюдо</span></div>
+                        <div class="variant-dish"><img src="images/drink4.jpg" alt="Напиток"><span>Напиток</span></div>
+                        <div class="variant-dish"><img src="images/main5.jpg" alt="Десерт" style="object-fit: cover;"><span>Десерт</span></div>
+                    </div>
+                    <h3>Бизнес</h3>
+                    <p>Суп + Главное блюдо + Напиток + Десерт</p>
+                    <p class="dessert-info">Десерт включен в набор</p>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-dishes">
+                        <div class="variant-dish"><img src="images/soup3.jpeg" alt="Вегетарианский суп"><span>Суп</span></div>
+                        <div class="variant-dish"><img src="images/salad4.jpg" alt="Вегетарианский салат"><span>Салат</span></div>
+                        <div class="variant-dish"><img src="images/drink5.jpg" alt="Напиток"><span>Напиток</span></div>
+                    </div>
+                    <h3>Вегетарианский</h3>
+                    <p>Суп + Салат + Напиток</p>
+                    <p class="dessert-info">Десерт можно добавить опционально</p>
+                </div>
+                
+                <div class="variant-card">
+                    <div class="variant-dishes">
+                        <div class="variant-dish"><img src="images/soup2.jpeg" alt="Суп"><span>Суп</span></div>
+                        <div class="variant-dish"><img src="images/main4.jpeg" alt="Главное блюдо"><span>Главное блюдо</span></div>
+                        <div class="variant-dish"><img src="images/main6.jpg" alt="Главное блюдо"><span>Главное блюдо</span></div>
+                        <div class="variant-dish"><img src="images/drink6.jpeg" alt="Напиток"><span>Напиток</span></div>
+                    </div>
+                    <h3>Двойной</h3>
+                    <p>Суп + Главное блюдо ×2 + Напиток</p>
+                    <p class="dessert-info">Десерт можно добавить опционально</p>
+                </div>
+            </div>
+            
+            <div class="dessert-note">
+                <p>🍰 <strong>Десерты можно добавлять к любому варианту ланча!</strong> Выберите любимый десерт из раздела выше.</p>
+            </div>
+        </section>
+
+        <!-- Секции меню -->
+        <section class="menu-section" id="soups-section">
+            <h2>Супы</h2>
+            <div class="dishes-grid" id="soups-grid"></div>
+        </section>
+
+        <section class="menu-section" id="mains-section">
+            <h2>Главные блюда</h2>
+            <div class="dishes-grid" id="mains-grid"></div>
+        </section>
+
+        <section class="menu-section" id="drinks-section">
+            <h2>Напитки</h2>
+            <div class="dishes-grid" id="drinks-grid"></div>
+        </section>
+
+        <section class="menu-section" id="salads-section">
+            <h2>Салаты и стартеры</h2>
+            <div class="dishes-grid" id="salads-grid"></div>
+        </section>
+
+        <section class="menu-section" id="desserts-section">
+            <h2>Десерты</h2>
+            <div class="dishes-grid" id="desserts-grid"></div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>Food Construct - доставка бизнес-ланчей в Москве</p>
+        <p>Контактные данные: <a href="tel:+70000000000">+7 (000) 000-00-00</a> | 
+           <a href="mailto:order@foodconstruct.ru">order@foodconstruct.ru</a></p>
+        <p>© 2025 Все права защищены</p>
+    </footer>
+
+    <!-- Подключение скриптов -->
+<!-- Подключение скриптов -->
+    <script src="./scripts/dishes.js"></script>           <!-- 1. Локальные данные -->
+    <script src="./scripts/api.js"></script>              <!-- 2. API загрузка -->
+    <script src="./scripts/meal-variants.js"></script>    <!-- 3. Варианты ланчей -->
+    <script src="./scripts/render-dishes.js"></script>    <!-- 4. Отрисовка -->
+    <script src="./scripts/filters.js"></script>          <!-- 5. Фильтры -->
+    <script src="./scripts/order-manager.js"></script>    <!-- 6. Заказ -->
+    <script src="./scripts/validation.js"></script>       <!-- 7. Валидация -->
+    
+    <script>
+        // Сделать все кнопки "Все" активными по умолчанию
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.querySelectorAll('.filter-btn[data-kind="all"]').forEach(btn => {
+                    btn.classList.add('active');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

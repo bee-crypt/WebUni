@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь - Food Construct</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="index.html#about">О нас</a>
+            <a href="auth.html">Вход в систему</a>
+            <a href="index.html#footer">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container feedback-container">
+            <h2>Форма обратной связи</h2>
+            <p class="form-description">Мы ценим ваше мнение! Заполните форму ниже, и наша служба заботы о клиентах свяжется с вами в течение 24 часов.</p>
+            
+            <form id="feedbackForm" action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fullname">ФИО <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" required 
+                           placeholder="Иванов Иван Иванович">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email для обратной связи <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="example@mail.ru">
+                </div>
+
+                <div class="form-group">
+                    <label>Откуда вы узнали о Food Construct? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="source-google" name="source" value="google" required>
+                            <label for="source-google">Поисковые системы (Google, Yandex)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="source-friends" name="source" value="friends">
+                            <label for="source-friends">Рекомендация друзей или коллег</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="source-social" name="source" value="social">
+                            <label for="source-social">Социальные сети (ВКонтакте, Telegram)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="source-ads" name="source" value="ads">
+                            <label for="source-ads">Наружная реклама или баннеры</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="source-other" name="source" value="other">
+                            <label for="source-other">Другое (укажите в сообщении)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="appeal-type">Тип вашего обращения <span class="required">*</span></label>
+                    <select id="appeal-type" name="appeal_type" required>
+                        <option value="">-- Выберите категорию --</option>
+                        <option value="complaint">Жалоба на качество или сервис</option>
+                        <option value="suggestion">Предложение по улучшению</option>
+                        <option value="question">Вопрос по доставке или меню</option>
+                        <option value="thanks">Благодарность сотрудникам</option>
+                        <option value="cooperation">Предложение о сотрудничестве</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Подробное описание <span class="required">*</span></label>
+                    <textarea id="message" name="message" required 
+                              placeholder="Опишите вашу ситуацию как можно подробнее. Это поможет нам быстрее решить вопрос..." 
+                              rows="7"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="attachment">Прикрепить файлы (необязательно)</label>
+                    <input type="file" id="attachment" name="attachment" 
+                           accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                    <small class="file-hint">Можно прикрепить до 3 файлов: фото, скриншоты или документы (JPG, PNG, PDF, DOC). Макс. размер — 5 МБ.</small>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Я даю согласие на обработку моих персональных данных в соответствии с <a href="#" style="color: #3498db;">Политикой конфиденциальности</a> <span class="required">*</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Хочу получать информацию о новых блюдах и специальных предложениях</label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Отправить сообщение</button>
+                    <button type="reset" class="reset-btn">Очистить форму</button>
+                </div>
+            </form>
+
+            <div class="back-link">
+                <p>По срочным вопросам звоните: <a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+                <a href="index.html">← Вернуться на главную страницу</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Food Construct | Служба заботы о клиентах | <a href="mailto:feedback@foodconstruct.ru">feedback@foodconstruct.ru</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const consent = document.getElementById('consent');
+            if (!consent.checked) {
+                alert('Для отправки формы необходимо дать согласие на обработку персональных данных.');
+                consent.focus();
+                return;
+            }
+
+            const appealType = document.getElementById('appeal-type').value;
+            const message = document.getElementById('message').value;
+            
+            if (appealType === 'complaint' && message.length < 20) {
+                alert('Для жалобы требуется более подробное описание (не менее 20 символов).');
+                return;
+            }
+            
+            alert('Спасибо за ваше обращение! Мы ответим вам в течение 24 часов.');
+            this.submit();
+        });
+    </script>
+</body>
+</html>
