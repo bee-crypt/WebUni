@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Food Construct</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/lunch-style.css">
+    <link rel="stylesheet" href="./styles/print.css" media="print">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="build-lunch.html" class="active">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#footer">Контакты</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="auth.html">Вход в систему</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Блюда будут отрисованы JS -->
+        <section class="menu-section" id="soups-section">
+            <h2>Супы</h2>
+            <div class="dishes-grid" id="soups-grid"></div>
+        </section>
+
+        <section class="menu-section" id="mains-section">
+            <h2>Главные блюда</h2>
+            <div class="dishes-grid" id="mains-grid"></div>
+        </section>
+
+        <section class="menu-section" id="drinks-section">
+            <h2>Напитки</h2>
+            <div class="dishes-grid" id="drinks-grid"></div>
+        </section>
+
+        <!-- Блок заказа -->
+        <div class="order-container" style="display: none;">
+            <div class="form-container">
+                <h2>Ваш заказ</h2>
+                
+                <form id="orderForm" action="https://httpbin.org/post" method="POST">
+                    <!-- Суп -->
+                    <div class="order-category order-soup" style="display: none;">
+                        <h3>Супы</h3>
+                        <div class="selected-dish">
+                            <span class="selected-dish-name">Блюдо не выбрано</span>
+                            <span class="selected-dish-price">0 ₽</span>
+                        </div>
+                        <input type="hidden" name="soup" value="">
+                    </div>
+
+                    <!-- Главное блюдо -->
+                    <div class="order-category order-main" style="display: none;">
+                        <h3>Главные блюда</h3>
+                        <div class="selected-dish">
+                            <span class="selected-dish-name">Блюдо не выбрано</span>
+                            <span class="selected-dish-price">0 ₽</span>
+                        </div>
+                        <input type="hidden" name="main" value="">
+                    </div>
+
+                    <!-- Напиток -->
+                    <div class="order-category order-drink" style="display: none;">
+                        <h3>Напитки</h3>
+                        <div class="selected-dish">
+                            <span class="selected-dish-name">Напиток не выбран</span>
+                            <span class="selected-dish-price">0 ₽</span>
+                        </div>
+                        <input type="hidden" name="drink" value="">
+                    </div>
+
+                    <!-- Итоговая стоимость -->
+                    <div class="order-total-section" style="display: none;">
+                        <h3>Стоимость заказа</h3>
+                        <div class="total-amount">
+                            <span class="total-label">Итого:</span>
+                            <span class="order-total">0 ₽</span>
+                        </div>
+                        <input type="hidden" name="total" value="0">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Оформить заказ</button>
+                        <button type="button" class="reset-btn" id="resetOrder">Сбросить заказ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>Food Construct - доставка бизнес-ланчей в Москве</p>
+        <p>Контактные данные: <a href="tel:+70000000000">+7 (000) 000-00-00</a> | 
+           <a href="mailto:order@foodconstruct.ru">order@foodconstruct.ru</a></p>
+        <p>© 2025 Все права защищены</p>
+    </footer>
+
+    <!-- Скрипты -->
+        <!-- Подключение скриптов -->
+    <script src="./scripts/dishes.js"></script>
+    <script src="./scripts/render-dishes.js"></script>
+    <script src="./scripts/order-manager.js"></script>
+</body>
+</html>
